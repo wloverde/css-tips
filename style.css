@@ -1,0 +1,104 @@
+
+:root {
+    /* Color Theme */
+    --text: rgb(34, 139, 34);
+    --background: rgb(12, 22, 0); 
+    --border: rgb(122, 218, 32);
+    --glow:  rgb(200, 236, 102);
+    --code-color: rgb(0, 255, 136);
+    --radius: 7px;
+  }
+
+body{
+    background-color: var(--background);
+    color: var(--text);
+    text-align: center;
+    font-size: 20px;
+}
+/* Formating changes for Header */
+header{
+    height: 150px;
+    font-size: 15px;
+    color: var(--code-color);
+}
+
+h1 {
+    font-size: 45px;
+    color: var(--text);
+}
+
+pre {
+    white-space: pre-wrap;
+    color: var(--code-color);
+    font-family: courier, monospace;
+    overflow-wrap: break-word;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr)); 
+}
+
+.linear-gradient-background {
+    background-image: linear-gradient(
+        rgba(0, 92, 15, 0.6) 0%,
+        rgba(0, 255, 42, 0.6) 100%);
+    border-radius: var(--radius);
+    text-align: left;    
+
+}
+    
+.card{
+    border: 3px groove  var(--border);
+    margin: 3%;
+    padding: 10px;
+}
+
+.card-head{
+    font-size: 30px;
+    border: 3px dashed var(--border);
+    border-radius: var(--radius);
+    margin: 0% 5%;
+    position: relative;
+    bottom: 30px;
+    background-color: var(--background);
+}
+
+.card .card-head {
+    border-radius: var(--radius);
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover,
+.card:hover .card-head {
+    box-shadow: inset 0px 0px 8px var(--glow), 0 0 15px var(--glow);
+}
+
+#header {
+    justify-content: space-evenly;
+}
+
+/* Change screen format based of resolution with Media Query  */
+@media screen and (max-width: 992px) {
+    .grid{
+        grid-template-columns: repeat(2, minmax(200px,1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(1, 100%);
+    }
+}
